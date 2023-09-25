@@ -1,0 +1,58 @@
+theia@theia-dosn20:/home/project$ mkdir newbranch
+theia@theia-dosn20:/home/project$ cd newbranch
+theia@theia-dosn20:/home/project/newbranch$ git init
+Initialized empty Git repository in /home/project/newbranch/.git/
+theia@theia-dosn20:/home/project/newbranch$ touch newbranchfile
+theia@theia-dosn20:/home/project/newbranch$ git add newbranchfile
+theia@theia-dosn20:/home/project/newbranch$ git config --global user.email "daniboi@gmail.com"
+theia@theia-dosn20:/home/project/newbranch$ git config --global user.name "daniboi"
+theia@theia-dosn20:/home/project/newbranch$ git commit -m "added newbranchfile"
+[master (root-commit) 93d91e1] added newbranchfile
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 newbranchfile
+theia@theia-dosn20:/home/project/newbranch$ git branch newbranch
+theia@theia-dosn20:/home/project/newbranch$ git revert HEAD --no-edit
+[master 7e21c6d] Revert "added newbranchfile"
+ Date: Sun Sep 24 17:16:45 2023 -0400
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ delete mode 100644 newbranchfile
+theia@theia-dosn20:/home/project/newbranch$ touch newgoodfile
+theia@theia-dosn20:/home/project/newbranch$ git add newgood
+file
+theia@theia-dosn20:/home/project/newbranch$ git commit -m "added newgoodfile"
+[master 234ec2e] added newgoodfile
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 newgoodfile
+theia@theia-dosn20:/home/project/newbranch$ cat newgoodfileecho 'Here is some text in my newgoodfile.' 
+theia@theia-dosn20:/home/project/newbranch$ touch newgoodfile
+theia@theia-dosn20:/home/project/newbranch$ git add newgoodfile
+theia@theia-dosn20:/home/project/newbranch$ git commit -m "added newgoodfile"
+[master b09db33] added newgoodfile
+ 1 file changed, 1 insertion(+)
+theia@theia-dosn20:/home/project/newbranch$ git log
+commit b09db3301f22650bb160236badc36b288a075be8 (HEAD -> master)
+Author: daniboi <daniboi@gmail.com>
+Date:   Sun Sep 24 17:19:43 2023 -0400
+
+    added newgoodfile
+
+commit 234ec2eeeea660618cff6d6f53af6d3929812ed0
+Author: daniboi <daniboi@gmail.com>
+Date:   Sun Sep 24 17:17:27 2023 -0400
+theia@theia-dosn20:/home/project/newbranch$ git checkout master
+Already on 'master'
+theia@theia-dosn20:/home/project/newbranch$ git merge newbranch
+Already up to date.
+theia@theia-dosn20:/home/project/newbranch$ git log
+commit b09db3301f22650bb160236badc36b288a075be8 (HEAD -> master)
+Author: daniboi <daniboi@gmail.com>
+Date:   Sun Sep 24 17:19:43 2023 -0400
+
+    added newgoodfile
+
+commit 234ec2eeeea660618cff6d6f53af6d3929812ed0
+Author: daniboi <daniboi@gmail.com>
+Date:   Sun Sep 24 17:17:27 2023 -0400
+theia@theia-dosn20:/home/project/newbranch$ git branch -d newbranch
+Deleted branch newbranch (was 93d91e1).
+theia@theia-dosn20:/home/project/newbranch$ 
