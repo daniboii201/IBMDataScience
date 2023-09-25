@@ -1,2 +1,2 @@
 # IBMDataScience
-This repository describes my journey to completing the IBM Data Science specialization from Coursera.
+This repository describes my journey to completing the IBM Data Science Professional Certificate from Coursera.
